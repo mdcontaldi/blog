@@ -11,7 +11,7 @@
     z-index: 1;
     max-width: var(--content-width);
     margin: 0 auto;
-    padding: 0 28px 100px;
+    padding: 56px 28px 100px;
 }
 
 /* Profile. */
@@ -236,7 +236,7 @@
     }
 
     .page-content {
-        padding: 0 14px 80px;
+        padding: 32px 14px 80px;
     }
 
     .profile {
