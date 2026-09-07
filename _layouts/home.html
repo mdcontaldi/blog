@@ -3,7 +3,7 @@ layout: default
 ---
 
 <main class="page-content">
-    {% include profile.html %} {% assign month_names =
+    {% include palette-seed.html %} {% assign month_names =
     "JAN,FEB,MAR,APR,MAY,JUN,JUL,AUG,SEP,OCT,NOV,DEC" | split: "," %} {% assign
     sections = site.articles | group_by: "section" %} {% assign global_pos = 2
     %} {% assign prev_color_ci = 9999 %} {% for section in sections %} {% assign
