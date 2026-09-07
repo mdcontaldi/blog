@@ -1,0 +1,47 @@
+title: "Matthew Contaldi's Blog"
+description: "A personal blog for notes, ideas, projects, and anything else worth sharing."
+url: "https://mdcontaldi.github.io"
+baseurl: "/blog"
+
+markdown: kramdown
+highlighter: rouge
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+collections:
+  articles:
+    output: true
+    permalink: /posts/:title/
+
+defaults:
+  - scope:
+      type: articles
+    values:
+      layout: post
+      section: game-security
+
+palette:
+  - "#00ff94"  # 0  green
+  - "#ff3b5c"  # 1  red-pink
+  - "#00e5ff"  # 2  cyan
+  - "#f700ff"  # 3  magenta
+  - "#ff6b00"  # 4  orange
+  - "#7c3aed"  # 5  purple
+  - "#39ff14"  # 6  lime
+  - "#ffe600"  # 7  yellow
+  - "#00cfff"  # 8  light cyan
+  - "#ff007f"  # 9  hot pink
+  - "#ff4500"  # 10 orange-red
+  - "#bf00ff"  # 11 violet
+  - "#00ff6a"  # 12 green
+  - "#ff1cf7"  # 13 pink-magenta
+  - "#ffae00"  # 14 amber
+  - "#0080ff"  # 15 blue
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor

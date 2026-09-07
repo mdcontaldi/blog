@@ -1,0 +1,4 @@
+{% assign build_seed = site.time | date: "%S" | plus: 0 %} {% assign strides =
+"3,5,7,9,11,13" | split: "," %} {% assign stride_pick = site.time | date: "%M" |
+plus: 0 | modulo: 6 %} {% assign build_stride = strides[stride_pick] | plus: 0
+%} {% assign palette_size = site.palette.size %}

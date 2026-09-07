@@ -1,0 +1,39 @@
+---
+layout: default
+---
+
+{% include palette-seed.html %} {% assign same_section = site.articles | where:
+"section", page.section | sort: "date" | reverse %} {% for article in
+same_section %} {% if article.url == page.url %} {% assign pos = forloop.index0
+| plus: 2 %} {% assign color_ci = pos | times: build_stride | plus: build_seed |
+modulo: palette_size %} {% assign post_color = site.palette[color_ci] %} {%
+break %} {% endif %} {% endfor %}
+
+<main class="page-content">
+    <article
+        class="post-article"
+        id="post"
+        style="--post-color: {{ post_color }}; --post-color-dim: {{ post_color }}08;"
+    >
+        <header class="post-header">
+            <a href="{{ '/' | relative_url }}" class="back-link">&larr; back</a>
+            <div class="tag-group post-tags">
+                {% for tag in page.tags %}
+                <span
+                    class="tag post-tag"
+                    style="color: {{ post_color }}; background: {{ post_color }}12; border-color: {{ post_color }}38;"
+                    >{{ tag }}</span
+                >
+                {% endfor %}
+            </div>
+            <h1 class="post-heading">{{ page.title }}</h1>
+            <time class="post-date">{{ page.date | date: "%B %-d, %Y" }}</time>
+        </header>
+
+        <div class="post-content">
+            {% assign stripped = content | strip %} {% if stripped == "" %}
+            <p class="coming-soon">Coming soon.</p>
+            {% else %} {{ content }} {% endif %}
+        </div>
+    </article>
+</main>

@@ -1,0 +1,10 @@
+{% include palette-seed.html %} {% assign profile_ci = 0 | times: build_stride |
+plus: build_seed | modulo: palette_size %} {% assign profile_color =
+site.palette[profile_ci] %}
+<section class="profile" style="--profile-color: {{ profile_color }};">
+    <div class="profile-stripe"></div>
+    <div class="profile-body">
+        <h1 class="profile-name">Matthew Contaldi</h1>
+        <span class="profile-handle">// 0AVX</span>
+    </div>
+</section>

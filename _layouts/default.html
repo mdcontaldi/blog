@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        {% assign meta_description = page.excerpt | default: site.description | strip_html | strip_newlines %}
+        <meta name="description" content="{{ meta_description | escape }}" />
+        <title>{% if page.title and page.title != site.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+
+        <!-- Fonts. -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+
+        <!-- Stylesheets. -->
+        <link rel="stylesheet" href="{{ '/css/base.css' | relative_url }}" />
+        <link rel="stylesheet" href="{{ '/css/style.css' | relative_url }}" />
+        {% if page.layout == 'post' %}
+        <link rel="stylesheet" href="{{ '/css/post.css' | relative_url }}" />
+        {% endif %}
+    </head>
+    <body>
+        {{ content }}
+    </body>
+</html>
